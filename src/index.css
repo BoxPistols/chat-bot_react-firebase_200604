@@ -11,3 +11,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.article__lay+.article__lay {
+  border-top: 1px solid azure;
+}
