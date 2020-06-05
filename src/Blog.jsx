@@ -36,11 +36,25 @@ class Blog extends React.Component {
     })
   }
 
-  // Life Cycle
+  // Life Cycle countUp
   componentDidMount() {
     document
       .querySelector(".likeButton")
       .addEventListener("click", this.countUp)
+  }
+  // 何回も呼ばれる 条件付け
+  componentDidUpdate() {
+    if (this.state.count >= 10) {
+      this.setState({
+        count: 0,
+      })
+    }
+  }
+  // 離脱時に解除
+  componentWillUnmount() {
+    document
+      .querySelector(".likeButton")
+      .removeEventListener("click", this.countUp)
   }
 
   countUp = () => {
