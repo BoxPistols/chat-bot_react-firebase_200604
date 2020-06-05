@@ -14,7 +14,7 @@ const Article = (props) => {
     <div className="article__lay">
       <h2>タイトル：{props.title}</h2>
       <p>オーダー：{props.order}</p>
-      <p>著者名：{props.name}</p>
+      <p onClick={() => props.change()}>著者名：{props.isName}</p>
       <p>
         <label htmlFor="check"> 公開：</label>
         <input

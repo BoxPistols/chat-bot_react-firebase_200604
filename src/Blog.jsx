@@ -20,12 +20,18 @@ class Blog extends React.Component {
     super(props)
     this.state = {
       isPublished: false,
+      isName: "仮名",
     }
   }
 
   toggleCheckPublished = () => {
     this.setState({
       isPublished: !this.state.isPublished,
+    })
+  }
+  changeName = () => {
+    this.setState({
+      isName: "XXX",
     })
   }
 
@@ -38,7 +44,9 @@ class Blog extends React.Component {
           order={12}
           isPublished={this.state.isPublished}
           toggle={() => this.toggleCheckPublished()}
-          name={author}
+          // name={author}
+          isName={this.state.isName}
+          change={() => this.changeName()}
         />
       </>
     )
