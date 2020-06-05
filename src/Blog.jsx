@@ -21,6 +21,7 @@ class Blog extends React.Component {
     this.state = {
       isPublished: false,
       isName: "仮名",
+      count: 0,
     }
   }
 
@@ -32,6 +33,19 @@ class Blog extends React.Component {
   changeName = () => {
     this.setState({
       isName: "XXX",
+    })
+  }
+
+  // Life Cycle
+  componentDidMount() {
+    document
+      .querySelector(".likeButton")
+      .addEventListener("click", this.countUp)
+  }
+
+  countUp = () => {
+    this.setState({
+      count: this.state.count + 1,
     })
   }
 
@@ -47,6 +61,7 @@ class Blog extends React.Component {
           // name={author}
           isName={this.state.isName}
           change={() => this.changeName()}
+          count={this.state.count}
         />
       </>
     )

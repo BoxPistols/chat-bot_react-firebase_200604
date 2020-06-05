@@ -1,4 +1,6 @@
 import React from "react"
+import LikeButton from "./LikeButton"
+
 const Article = (props) => {
   /*   let PublishState = ""
   if (props.isPublished) {
@@ -23,6 +25,9 @@ const Article = (props) => {
           checked={props.isPublished}
           onClick={() => props.toggle()}
         />
+      </p>
+      <p>
+        <LikeButton count={props.count} />
       </p>
     </div>
   )
